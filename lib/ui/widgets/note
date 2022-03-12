@@ -1,0 +1,32 @@
+body: ListView(
+  children: [
+    Column(
+      children: [
+        ListTile(
+          leading: CircleAvatar(
+            backgroundColor: Colors.brown.shade800,
+            child: const Text('AH'),
+          ),
+          title: Text("Batman"),
+          subtitle: Text("(99)99999"),
+          trailing: GestureDetector(
+              onTap: () {
+                setState(() {
+                  if (select != true) {
+                    select = true;
+                  } else if (select == true) {
+                    select = false;
+                  }
+                });
+              },
+              child: select
+                  ? Icon(Icons.star_border_outlined)
+                  : Icon(
+                      Icons.star,
+                      color: "3F50B5".toColor(),
+                    )),
+        )
+      ],
+    ),
+  ],
+),
